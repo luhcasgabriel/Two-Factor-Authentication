@@ -3,9 +3,9 @@
 - functions to apply double authentication factor
 
 
-*Info
+#Info
 
-  -Project Java
+ Project Java
   - Jar Commons-net-3.6.6
   
  Required Settings
