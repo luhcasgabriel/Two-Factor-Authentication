@@ -6,7 +6,6 @@
 #Info
 
  Project Java
-  - Jar Commons-net-3.6.6
   
  Required Settings
  
