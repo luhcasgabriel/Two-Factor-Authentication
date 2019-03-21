@@ -13,7 +13,11 @@ import org.apache.commons.net.ntp.NTPUDPClient;
 
 public class TwoFactorAuthenticator {
 
-  // valor default do tempo para mudanÁa do token
+  /* 
+  valor default do tempo para mudan√ßa do token
+  
+  default value of time to change the token
+  */
   public static final int DEFAULT_TIME_STEP_SECONDS = 30;
 
   private static int NUM_DIGITS_OUTPUT = 6;
@@ -29,12 +33,20 @@ public class TwoFactorAuthenticator {
     blockOfZeros = new String(chars);
   }
 
-  // mÈtodo para retornar chave secreta usu·rio
+  /*
+  m√©todo para retornar chave secreta usu√°rio
+  method to return secret user key
+  */
+
   public static String generateBase32Secret() {
     return generateBase32Secret(16);
   }
 
-  // mÈtodo que monta chave secreta
+  /*
+  m√©todo que monta chave secreta
+ 
+  method that mounts secret key
+  */
   public static String generateBase32Secret(int length) {
     StringBuilder sb = new StringBuilder(length);
     Random random = new SecureRandom();
@@ -100,6 +112,8 @@ public class TwoFactorAuthenticator {
     }
 
     // criptografar os dados com a chave e retornar o SHA1 dele em hex
+    // encrypt the data with the key and return the SHA1 from it in hex
+
     SecretKeySpec signKey = new SecretKeySpec(key, "HmacSHA1");
     Mac mac = Mac.getInstance("HmacSHA1");
     mac.init(signKey);
@@ -112,20 +126,21 @@ public class TwoFactorAuthenticator {
     long truncatedHash = 0;
     for (int i = offset; i < offset + 4; ++i) {
       truncatedHash <<= 8;
-      // obtÈm os 4 bytes no deslocamento
+      // obt√©m os 4 bytes no deslocamento
       truncatedHash |= (hash[i] & 0xFF);
     }
     // corta o bit superior
     truncatedHash &= 0x7FFFFFFF;
 
-    // o token È ent„o os ˙ltimos 6 dÌgitos no n˙mero
+    // o token √© ent√£o os √∫ltimos 6 d√≠gitos no n√∫mero
     truncatedHash %= 1000000;
 
     return truncatedHash;
   }
 
   public static String generateOtpAuthUrl(String keyId, String secret) {
-    StringBuilder sb = new StringBuilder(64);
+    StringBuilder sb = new StringBuilder(128);
+    sb.append("https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=200x200&chld=M|0&cht=qr&chl=");
     addOtpAuthPart(keyId, secret, sb);
     return sb.toString();
   }
@@ -173,33 +188,33 @@ public class TwoFactorAuthenticator {
 
       switch (which) {
       case 0:
-        // todos os 5 bits s„o os 5 principais bits
+        // todos os 5 bits s√£o os 5 principais bits
         working = (val & 0x1F) << 3;
         which = 1;
         break;
       case 1:
-        // top 3 bits È menor 3 bits
+        // top 3 bits √© menor 3 bits
         working |= (val & 0x1C) >> 2;
         result[resultIndex++] = (byte) working;
-        // lower 2 bits È superior a 2 bits
+        // lower 2 bits √© superior a 2 bits
         working = (val & 0x03) << 6;
         which = 2;
         break;
       case 2:
-        // todos os 5 bits s„o de 5 bits
+        // todos os 5 bits s√£o de 5 bits
         working |= (val & 0x1F) << 1;
         which = 3;
         break;
       case 3:
-        // top 1 bit È o menor 1 bit
+        // top 1 bit √© o menor 1 bit
         working |= (val & 0x10) >> 4;
         result[resultIndex++] = (byte) working;
-        // 4 bits mais baixos s„o os 4 bits principais
+        // 4 bits mais baixos s√£o os 4 bits principais
         working = (val & 0x0F) << 4;
         which = 4;
         break;
       case 4:
-        // top 4 bits È o menor 4 bits
+        // top 4 bits √© o menor 4 bits
         working |= (val & 0x1E) >> 1;
         result[resultIndex++] = (byte) working;
         // lower 1 bit is top 1 bit
@@ -241,14 +256,19 @@ public class TwoFactorAuthenticator {
     return generateNumberString(base32Secret, currentTime, DEFAULT_TIME_STEP_SECONDS);
   }
 
+  /*
+  m√©todo que valida c√≥digo do token
+  
+  method that validates token code
+  */
   public static boolean fncValidaToken(String code, String keyId, String keySecret) throws Exception {
 
     try {
 
-      // chama mÈtodo para gerar cÛdigo token
+      // chama m√©todo para gerar c√≥digo token
       String validaCode = fncAlgoritmoTOTP(keyId, keySecret);
 
-      // verifica se token È igual ao da base
+      // verifica se token √© igual ao da base
       if (code.equals(validaCode)) {
         return true;
       } else {
@@ -261,8 +281,13 @@ public class TwoFactorAuthenticator {
 
   }
 
-  // retorna uma chave secreta a partir da data/hor·rio do servidor do google e a
-  // chave do usu·rio
+  /*
+  retorna uma chave secreta a partir da data/hor√°rio do servidor do google e a
+  chave do usu√°rio
+  
+  returns a secret key from the date / time of the google server and the
+  user key
+  */
   public static String fncAlgoritmoTOTP(String Email, String keySecret) throws Exception {
 
     String TIME_SERVER = "time.google.com";
@@ -273,7 +298,7 @@ public class TwoFactorAuthenticator {
       return generateCurrentNumberString(keySecret,
           timeClient.getTime(inetAddress).getMessage().getTransmitTimeStamp().getTime());
     } catch (Exception e) {
-      System.out.println("Erro ao gerar cÛdigo TOTP " + e);
+      System.out.println("Erro ao gerar c√≥digo TOTP " + e);
       throw e;
     }
 
@@ -284,23 +309,44 @@ public class TwoFactorAuthenticator {
     String email = "teste@teste.com";
     
     
-    //chama mÈtodo que gera chave secreta
+    /*
+      chama m√©todo que gera chave secreta
+      
+      call method that generates secret key
+    */
     String chave = generateBase32Secret();
     System.out.println("chave secreta = " + chave);
     
-    //chama mÈtodo para montar mensagem qr code (caso seja por qr Code)
-    //passando chave secreta e email do usu·rio
+    /*
+      chama m√©todo para montar mensagem qr code (caso seja por qr Code)
+      passando chave secreta e email do usu√°rio
+      aplica√ß√£o monta Qr Code da Api do google, mas pode passar a mensagem em um QrCode interno
+  
+      call method to mount message qr code (if it is by qr code)
+      passing secret key and user email
+      application mounts Qr Code from Google's Api, but can pass the message in an internal QrCode
+    */
     String msgQrCode = generateOtpAuthUrl(email, chave);
-    System.out.println("Mensagem para passar no QrCode = " + msgQrCode);
+    System.out.println("QrCode google ou mensagem que vai passar em algum qrCode Interno :");
+    System.out.println(msgQrCode);
     
-    //mÈtodo para retornar cÛdigo Token
-    //mÈtodo deve estar sincronizado com os servidores do google, necess·rio a lib commons
+    /*
+      m√©todo para retornar c√≥digo Token
+      m√©todo deve estar sincronizado com os servidores do google, necess√°rio a lib commons
+      
+      method to return Token code
+      method must be synchronized with google servers, needed the commons lib
+    */
     String CodeRetorno = fncAlgoritmoTOTP(email, chave);
-    System.out.println("CÛdigo Token = " + CodeRetorno);
+    System.out.println("C√≥digo Token = " + CodeRetorno);
     
-    //retorna se foi validado o token de seguranÁa do usu·rio
+    /*
+      retorna se foi validado o token de seguran√ßa do usu√°rio
+      
+      returns whether the user security token has been validated
+    */
     boolean validaToken = fncValidaToken(CodeRetorno, email, chave);
-    System.out.println("CÛdigo do Token È v·lido? = " + validaToken);
+    System.out.println("C√≥digo do Token √© v√°lido? = " + validaToken);
     
   }
 }
