@@ -27,14 +27,15 @@
  ## Manual
  
  - Run the code 
-<p align="center">
-  <img src="TwoFactorAuthenticator/images/imageqr.png" width="100" height="100" title="hover text">
-</p> 
+
  - Download google authenticator
 <p align="center">
   <img src="TwoFactorAuthenticator/images/image1.png" width="100" height="100" title="hover text">
 </p>  
  - read the qrCode
+ <p align="center">
+  <img src="TwoFactorAuthenticator/images/imageqr.PNG" width="100" height="100" title="hover text">
+</p> 
 <p align="center">
   <img src="TwoFactorAuthenticator/images/image2.png" width="100" height="100" title="hover text">
 </p>  
