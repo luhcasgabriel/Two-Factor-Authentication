@@ -1,6 +1,6 @@
-# Two Factor Authentication with Google Authenticator
+<h1 align="center">Two Factor Authentication with Google Authenticator</h1>
 
-Functions to apply double authentication factor
+<p align="center">Functions to apply double authentication factor</p>
 <p align="center">
   <img src="TwoFactorAuthenticator/images/image1.png" width="300" height="450" title="hover text">
 </p>  
