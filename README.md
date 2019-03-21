@@ -30,7 +30,7 @@
 
  - Download google authenticator
 <p align="center">
-  <img src="TwoFactorAuthenticator/images/image1.png" width="300" height="300" title="hover text">
+  <img src="TwoFactorAuthenticator/images/image1.png" width="200" height="300" title="hover text">
 </p>  
  - read the qrCode
  <p align="center">
