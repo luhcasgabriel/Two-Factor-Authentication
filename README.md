@@ -29,10 +29,12 @@
  - Run the code 
 
  - Download google authenticator
+ 
 <p align="center">
   <img src="TwoFactorAuthenticator/images/image1.png" width="200" height="330" title="hover text">
 </p>  
  - read the qrCode
+ 
  <p align="center">
   <img src="TwoFactorAuthenticator/images/imageqr.PNG" width="200" height="200" title="hover text">
 </p> 
@@ -40,10 +42,13 @@
   <img src="TwoFactorAuthenticator/images/image2.png" width="200" height="330" title="hover text">
 </p>  
  - Generate code
+ 
  <p align="center">
    <img src="TwoFactorAuthenticator/images/image3.png" width="200" height="330" title="hover text">
  </p>
+ 
  - Run the code one more time
+ 
  - validate the code of the application with that of the program
 
  
