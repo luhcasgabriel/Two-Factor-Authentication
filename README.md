@@ -40,6 +40,10 @@
 
  - Run the code one more time
  - validate the code of the application with that of the program
+ 
+ <p align="center">
+  <img src="TwoFactorAuthenticator/images/image3.png" width="100" height="100" title="hover text">
+</p>
 
  
 
