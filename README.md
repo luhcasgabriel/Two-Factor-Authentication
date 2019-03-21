@@ -2,7 +2,7 @@
 
 Functions to apply double authentication factor
 <p align="center">
-  <img src="TwoFactorAuthenticator/images/image1.png" width="300" height="430" title="hover text">
+  <img src="TwoFactorAuthenticator/images/image1.png" width="300" height="450" title="hover text">
 </p>  
 
 ## Info
@@ -33,7 +33,7 @@ Functions to apply double authentication factor
  - Download google authenticator
  
 <p align="center">
-  <img src="TwoFactorAuthenticator/images/image1.png" width="300" height="430" title="hover text">
+  <img src="TwoFactorAuthenticator/images/image1.png" width="300" height="450" title="hover text">
 </p>  
 
  - Read the qrCode
@@ -42,7 +42,7 @@ Functions to apply double authentication factor
   <img src="TwoFactorAuthenticator/images/imageqr.PNG" width="300" height="300" title="hover text">
 </p> 
 <p align="center">
-  <img src="TwoFactorAuthenticator/images/image2.png" width="300" height="430" title="hover text">
+  <img src="TwoFactorAuthenticator/images/image2.png" width="300" height="450" title="hover text">
 </p>  
 
  - Generate code
