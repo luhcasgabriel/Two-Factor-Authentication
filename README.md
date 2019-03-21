@@ -27,23 +27,23 @@
  ## Manual
  
  - Run the code 
- ![GitHub qr](TwoFactorAuthenticator/images/imageqr.png)
- 
+<p align="center">
+  <img src="TwoFactorAuthenticator/images/imageqr.png" width="100" height="100" title="hover text">
+</p> 
  - Download google authenticator
-  ![GitHub qr](TwoFactorAuthenticator/images/image1.png)
-  
+<p align="center">
+  <img src="TwoFactorAuthenticator/images/image1.png" width="100" height="100" title="hover text">
+</p>  
  - read the qrCode
-  ![GitHub qr](TwoFactorAuthenticator/images/image2.png)
-  
+<p align="center">
+  <img src="TwoFactorAuthenticator/images/image2.png" width="100" height="100" title="hover text">
+</p>  
  - Generate code
-   ![GitHub qr](TwoFactorAuthenticator/images/image3.png)
-
+ <p align="center">
+   <img src="TwoFactorAuthenticator/images/image3.png" width="100" height="100" title="hover text">
+ </p>
  - Run the code one more time
  - validate the code of the application with that of the program
- 
- <p align="center">
-  <img src="TwoFactorAuthenticator/images/image3.png" width="100" height="100" title="hover text">
-</p>
 
  
 
