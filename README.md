@@ -1,7 +1,9 @@
 # Two Factor Authentication with Google Authenticator
 
-- functions to apply double authentication factor
-
+Functions to apply double authentication factor
+<p align="center">
+  <img src="TwoFactorAuthenticator/images/image1.png" width="300" height="430" title="hover text">
+</p>  
 
 ## Info
 
@@ -31,22 +33,22 @@
  - Download google authenticator
  
 <p align="center">
-  <img src="TwoFactorAuthenticator/images/image1.png" width="200" height="330" title="hover text">
+  <img src="TwoFactorAuthenticator/images/image1.png" width="300" height="430" title="hover text">
 </p>  
 
  - Read the qrCode
  
  <p align="center">
-  <img src="TwoFactorAuthenticator/images/imageqr.PNG" width="200" height="200" title="hover text">
+  <img src="TwoFactorAuthenticator/images/imageqr.PNG" width="300" height="300" title="hover text">
 </p> 
 <p align="center">
-  <img src="TwoFactorAuthenticator/images/image2.png" width="200" height="330" title="hover text">
+  <img src="TwoFactorAuthenticator/images/image2.png" width="300" height="430" title="hover text">
 </p>  
 
  - Generate code
  
  <p align="center">
-   <img src="TwoFactorAuthenticator/images/imagenew.png" width="200" height="330" title="hover text">
+   <img src="TwoFactorAuthenticator/images/imagenew.png" width="300" height="430" title="hover text">
  </p>
  
  - Run the code one more time
