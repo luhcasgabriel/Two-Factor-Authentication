@@ -46,7 +46,7 @@
  - Generate code
  
  <p align="center">
-   <img src="TwoFactorAuthenticator/images/image3.png" width="200" height="330" title="hover text">
+   <img src="TwoFactorAuthenticator/images/imagenew.png" width="200" height="330" title="hover text">
  </p>
  
  - Run the code one more time
