@@ -3,17 +3,17 @@
 - functions to apply double authentication factor
 
 
-# Info
+## Info
 
- # Project Java
+ ## Project Java
   
- # Required Settings
+ ## Required Settings
  
  - Lib Commons-net.3.6.6 - located in the libs Folder of the project
  - Aplication Mobile - Google Authenticator
  
  
- # Aplication
+ ## Aplication
  
  - functions
    - generate secret key
@@ -24,7 +24,7 @@
    
    
    
- # Manual
+ ## Manual
  
  - Run the code 
  ![GitHub qr](Two-Factor-Authentication/images/imageqr.png)
