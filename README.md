@@ -36,6 +36,7 @@
   <img src="TwoFactorAuthenticator/images/image1.png" width="300" height="450" title="hover text">
 </p>  
 
+ - Copy and paste the url generated in a browser
  - Read the qrCode
  
  <p align="center">
