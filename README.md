@@ -27,10 +27,20 @@
  # Manual
  
  - Run the code 
- 
+ ![GitHub qr](Two-Factor-Authentication/images/imageqr.png)
  
  - Download google authenticator
- 
+  ![GitHub qr](Two-Factor-Authentication/images/image1.png)
+  
+ - read the qrCode
+  ![GitHub qr](Two-Factor-Authentication/images/image2.png)
+  
+ - Generate code
+   ![GitHub qr](Two-Factor-Authentication/images/image3.png)
+
+ - Run the code one more time
+ - validate the code of the application with that of the program
+
  
 
  
