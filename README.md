@@ -1,4 +1,4 @@
-# Two Factor Authentication whith Google Authenticator
+# Two Factor Authentication with Google Authenticator
 
 - functions to apply double authentication factor
 
